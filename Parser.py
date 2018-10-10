@@ -17,10 +17,13 @@ class Parser:
         return words_parsed
 
     def parse_doc(self, document):
+        # Normalize : Remove every punctuation and small words (less than 4 characters). We also put in lower case
+        # Extension possible : Could remove the stop_words
         words = self.__remove_punctuation(document)
         words = self.__remove_small_words(words)
-        print("In parse_doc: ")
-        print(words)
+        words = words.lower()
+
+        # Tokenize : interpret each whitespace as a word separator
         words = words.split()
         return words
 

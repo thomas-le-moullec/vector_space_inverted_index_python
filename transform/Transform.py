@@ -1,4 +1,4 @@
 class Transform:
 
-    def __init__(self, matrix):
-        self.matrix = matrix
+    def __init__(self):
+        pass

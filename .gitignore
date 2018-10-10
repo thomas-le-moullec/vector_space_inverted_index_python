@@ -105,3 +105,6 @@ venv.bak/
 
 # IDE
 .idea/
+
+# Cache
+*/__pycache__/*.cpython-37.pyc

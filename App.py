@@ -7,7 +7,7 @@ from pathlib import Path
 '''
 
 default_doc_file = "ressources/text_collection_3"
-
+default_queries_file = "ressources/query_10"
 
 def get_collection(file_path):
     try:
@@ -20,7 +20,7 @@ def get_collection(file_path):
 def run_app():
     collection = get_collection(default_doc_file)
     if collection is None:
-        print("Collection Error: Check the filename.")
+        print("Collection documents Error: Check the filename.")
         return
     '''
     # Splitting the lines in the app is not optimized for performance
@@ -30,6 +30,13 @@ def run_app():
     docs_collection = collection.splitlines()
     vector_space = VectorSpace(docs_collection)
     vector_space.index_collection()
+    queries_collection = get_collection(default_queries_file)
+    if queries_collection is None:
+        print("Queries database Error: Check the filename.")
+        return
+    queries = queries_collection.splitlines()
+    for query in queries:
+        vector_space.sort(query)
 
 
 if __name__ == '__main__':
