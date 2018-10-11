@@ -7,7 +7,7 @@ class Parser:
         self.mini_len_word = 4
 
     def __remove_punctuation(self, string_name):
-        translator = str.maketrans('', '', string.punctuation)
+        translator = str.maketrans(string.punctuation, ' '*len(string.punctuation))
         new_string = string_name.translate(translator)
         return new_string
 
