@@ -22,7 +22,6 @@ class Parser:
         words = self.__remove_punctuation(document)
         words = self.__remove_small_words(words)
         words = words.lower()
-
         # Tokenize : interpret each whitespace as a word separator
         words = words.split()
         return words

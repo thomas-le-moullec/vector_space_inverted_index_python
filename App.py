@@ -9,6 +9,7 @@ from pathlib import Path
 default_doc_file = "ressources/text_collection_100"
 default_queries_file = "ressources/query_10"
 
+
 def get_collection(file_path):
     try:
         collection = Path(file_path).read_text()
@@ -37,7 +38,6 @@ def run_app():
     queries = queries_collection.splitlines()
     for query in queries:
         vector_space.sort(query)
-        exit(0)
 
 
 if __name__ == '__main__':
