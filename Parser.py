@@ -6,12 +6,14 @@ class Parser:
     def __init__(self):
         self.mini_len_word = 4
 
-    def __remove_punctuation(self, string_name):
+    @staticmethod
+    def __remove_punctuation(string_name):
         translator = str.maketrans(string.punctuation, ' '*len(string.punctuation))
         new_string = string_name.translate(translator)
         return new_string
 
-    def __remove_small_words(self, words):
+    @staticmethod
+    def __remove_small_words(words):
         short_words = re.compile(r'\W*\b\w{1,3}\b')
         words_parsed = short_words.sub('', words)
         return words_parsed
@@ -26,9 +28,13 @@ class Parser:
         words = words.split()
         return words
 
-    def parse_term(self, term):
-        return True
+    @staticmethod
+    def parse_term(term):
+        if term[-1] == 's':
+            term = term[:-1]
+        return term
 
-    def remove_stop_words(self, document):
+    @staticmethod
+    def remove_stop_words(document):
         pass
 

@@ -30,18 +30,9 @@ even           -> D30:15 | D60:6
 number of unique keyword: 33
 L2:9.35589766832483
 similarity:0.23670831046203974
+=========END of query:bank=========
 query :stock banking
 
-id: D0057
-top 5 keywords:
-stock          -> D17:12 | D19:1, 20 | D20:23 | D26:12 | D27:3, 13 | D36:7 | D38:5, 26 | D39:8 | D40:25 | D41:10 | D45:16 | D50:12 | D52:1, 20 | D53:23 | D57:12, 20, 30 | D78:6
-price          -> D4:34 | D27:4, 9 | D31:9 | D40:7 | D41:7, 12 | D57:21, 26 | D77:10
-would          -> D4:5 | D17:8 | D23:16 | D26:5, 13 | D27:5 | D30:5 | D41:5 | D42:17 | D43:7 | D45:3 | D50:8 | D55:16 | D57:5, 13, 22 | D59:34 | D66:9 | D79:8 | D84:21 | D94:21 | D99:11
-specify        -> D26:2 | D57:2
-type           -> D26:3 | D57:3
-number of unique keyword: 32
-L2:10.11422451946645
-similarity:0.26139979240980843
 id: D0017
 top 5 keywords:
 quickly        -> D17:4 | D50:4
@@ -62,18 +53,19 @@ performance    -> D17:15 | D50:15 | D66:8
 number of unique keyword: 19
 L2:17.82451188039779
 similarity:0.24269550661156636
+id: D0019
+top 5 keywords:
+thi            -> D4:3 | D19:3, 24, 29 | D46:29 | D52:3, 24, 29 | D86:3
+new            -> D19:10, 31 | D52:10, 31
+week           -> D1:3 | D2:1 | D4:19 | D19:4, 30 | D28:25 | D52:4, 30 | D58:25
+fell           -> D19:2 | D52:2
+issue          -> D19:9 | D52:9
+number of unique keyword: 27
+L2:9.792195389210908
+similarity:0.2108964447344431
+=========END of query:stock banking=========
 query :the company share
 
-id: D0081
-top 5 keywords:
-share          -> D38:8, 29 | D39:6, 12 | D40:9, 17 | D41:16 | D44:10 | D63:25 | D65:15, 18 | D66:17 | D79:7, 19 | D80:9 | D81:9, 13, 19 | D95:25
-dlr            -> D5:14 | D6:11, 12, 17, 27 | D7:7, 9, 13 | D10:8, 11, 16 | D11:17, 20, 21 | D29:6, 11, 17 | D31:13 | D32:30 | D36:14, 23 | D39:16 | D40:8 | D41:15 | D42:15 | D44:9 | D46:13 | D59:6, 11, 17 | D64:8, 11 | D66:16 | D68:5 | D71:6 | D80:8, 14 | D81:7, 8, 11, 12 | D84:26, 29 | D98:24
-nine           -> D81:3
-second         -> D81:16
-beverage       -> D81:21
-number of unique keyword: 18
-L2:5.77995775562133
-similarity:0.3969181720331724
 id: D0065
 top 5 keywords:
 repeated       -> D65:1
@@ -84,16 +76,27 @@ share          -> D38:8, 29 | D39:6, 12 | D40:9, 17 | D41:16 | D44:10 | D63:25 |
 number of unique keyword: 18
 L2:10.21127567124938
 similarity:0.31003169564755007
-id: D0039
+id: D0038
 top 5 keywords:
-completed      -> D39:4
-acquire        -> D39:10
-lugano         -> D39:14
-switzerland    -> D39:15
-share          -> D38:8, 29 | D39:6, 12 | D40:9, 17 | D41:16 | D44:10 | D63:25 | D65:15, 18 | D66:17 | D79:7, 19 | D80:9 | D81:9, 13, 19 | D95:25
-number of unique keyword: 16
-L2:9.954687775588356
-similarity:0.30728173077962534
+shareholder    -> D38:9, 19 | D68:43
+board          -> D33:2 | D38:2, 16 | D78:3
+april          -> D6:25 | D7:0 | D10:6 | D11:19 | D38:11, 22 | D46:28 | D71:27 | D79:23 | D94:11
+voted          -> D38:17
+annual         -> D38:20
+number of unique keyword: 23
+L2:14.018252929209114
+similarity:0.2973746994548426
+id: D0040
+top 5 keywords:
+terminal       -> D39:1 | D40:11, 22 | D42:1 | D43:16, 25
+computer       -> D39:0 | D40:10, 21 | D42:0 | D43:15, 18 | D62:4
+holding        -> D40:20
+certain        -> D40:27
+involving      -> D40:29
+number of unique keyword: 28
+L2:14.448325810248631
+similarity:0.2885229615149294
+=========END of query:the company share=========
 query :company benefit shares
 
 id: D0068
@@ -105,7 +108,17 @@ dean           -> D63:0 | D67:3 | D68:9, 26
 acquisition    -> D35:12 | D45:6 | D46:2 | D47:9 | D68:21, 33 | D82:32 | D83:12
 number of unique keyword: 42
 L2:10.875430279827189
-similarity:0.40041332174538785
+similarity:0.32693610816302265
+id: D0065
+top 5 keywords:
+repeated       -> D65:1
+projection     -> D65:4
+probably       -> D65:10
+range          -> D65:17
+share          -> D38:8, 29 | D39:6, 12 | D40:9, 17 | D41:16 | D44:10 | D63:25 | D65:15, 18 | D66:17 | D79:7, 19 | D80:9 | D81:9, 13, 19 | D95:25
+number of unique keyword: 18
+L2:10.21127567124938
+similarity:0.25313981947545
 id: D0038
 top 5 keywords:
 shareholder    -> D38:9, 19 | D68:43
@@ -115,17 +128,8 @@ voted          -> D38:17
 annual         -> D38:20
 number of unique keyword: 23
 L2:14.018252929209114
-similarity:0.20234342196857133
-id: D0040
-top 5 keywords:
-terminal       -> D39:1 | D40:11, 22 | D42:1 | D43:16, 25
-computer       -> D39:0 | D40:10, 21 | D42:0 | D43:15, 18 | D62:4
-holding        -> D40:20
-certain        -> D40:27
-involving      -> D40:29
-number of unique keyword: 28
-L2:14.448325810248631
-similarity:0.19632041144207207
+similarity:0.24280542535928915
+=========END of query:company benefit shares=========
 query :"Brown Forman"
 
 id: D0082
@@ -158,3 +162,4 @@ lynch          -> D24:10 | D56:10 | D83:7
 number of unique keyword: 14
 L2:17.476632205521398
 similarity:0.3284467187835329
+=========END of query:"Brown Forman"=========

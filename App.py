@@ -1,4 +1,3 @@
-from Parser import Parser
 from VectorSpace import VectorSpace
 from pathlib import Path
 
@@ -23,21 +22,19 @@ def run_app():
     if collection is None:
         print("Collection documents Error: Check the filename.")
         return
-    '''
-    # Splitting the lines in the app is not optimized for performance
-    # because we need to loop again to index every document / line in the vector space.
-    # Nevertheless it is a good implementation and utilization of the vector space API.
-    '''
     docs_collection = collection.splitlines()
     vector_space = VectorSpace(docs_collection)
-    vector_space.index_collection()
+    index_res = vector_space.index_collection()
+    if not index_res:
+        return False
     queries_collection = get_collection(default_queries_file)
     if queries_collection is None:
         print("Queries database Error: Check the filename.")
         return
     queries = queries_collection.splitlines()
     for query in queries:
-        vector_space.sort(query)
+        result = vector_space.sort(query)
+        vector_space.display_report(query, result)
 
 
 if __name__ == '__main__':

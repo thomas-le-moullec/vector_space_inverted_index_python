@@ -7,11 +7,6 @@ class Document:
         self.vocabulary = Counter()
         self.vector = {}
 
-    '''
-        TODO:
-        Check if unique or Distinct
-    '''
-
     def get_magnitude(self):
         norm = 0
         for term in self.vector:
