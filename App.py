@@ -1,3 +1,5 @@
+import sys
+
 from VectorSpace import VectorSpace
 from pathlib import Path
 
@@ -5,8 +7,8 @@ from pathlib import Path
     The app below show an implementation example of the VectorSpace api
 '''
 
-default_doc_file = "ressources/text_collection_100"
-default_queries_file = "ressources/query_10"
+default_doc_file = "resources/text_collection_100.txt"
+default_queries_file = "resources/query_10.txt"
 
 
 def get_collection(file_path):
@@ -38,4 +40,8 @@ def run_app():
 
 
 if __name__ == '__main__':
+    if len(sys.argv) == 3:
+        if sys.argv[1] is not None and sys.argv[2] is not None:
+            default_doc_file = sys.argv[1]
+            default_queries_file = sys.argv[2]
     run_app()
