@@ -12,6 +12,19 @@ VectorSpace.py: This is the main class of the API which is implementing the Tran
 
 App.py: A good example of the API implementation. It is basically getting the collection of documents and queries. Calling the index_collection and then in a loop it is calling the sort and the display.
 
+## Help and Environment
+This project has been realized with Python 3.7.0 on Windows Pro 10.0.17134 Build 17134.
+Run successfully on Linux and OSX
+
+There is no libraries or packages
+
+## To run the program (2 possibilities): 
+* python App.py
+* python App.py resources/text_collection_100.txt resources/query_10.txt
+
+>The solution 1 will open the default files defined in the App.py file.
+In the solution 2, the first argument is the documents collection and the second is the queries collection. You can put only one argument and the queries collection will be the one defined in App.py
 
 
->thomas.le-moullec
+thomas.le-moullec:
+https://github.com/thomas-le-moullec/vector_space_inverted_index
