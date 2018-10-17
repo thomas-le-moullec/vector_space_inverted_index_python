@@ -18,6 +18,7 @@ class Parser:
         words_parsed = short_words.sub('', words)
         return words_parsed
 
+    # Function to parse a document. This is basically called by a query(which is a document) and a random document
     def parse_doc(self, document):
         # Normalize : Remove every punctuation and small words (less than 4 characters). We also put in lower case
         # Extension possible : Could remove the stop_words

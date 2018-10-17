@@ -6,6 +6,10 @@ from similarity import Cosine
 
 class VectorSpace:
 
+    # This class is the main object of the api - It can take 3 optional parameters:
+    # The dictionaries / documents, a transform defined in transform package, a similarity defined in similarity package
+    # Transform is used to compute the weight of terms, similarity to compute the similarity between two vectors
+    # In our case, we use the cosine similarity on a query and a document and the Tfidf
     def __init__(self, dictionnaries=[], transforms=TfIdf.TfIdf(), similarity=Cosine.Cosine()):
         self.dictionnaries = dictionnaries
         self.transform = transforms
@@ -15,6 +19,7 @@ class VectorSpace:
         self.index = {}
         self.documents = []
 
+    # Function to index a term in the inverted_index
     def index_term(self, term, idx_term, idx_doc):
         term = self.parser.parse_term(term)
         if term not in self.index:
@@ -24,6 +29,7 @@ class VectorSpace:
         self.index[term][idx_doc].append(idx_term)
         self.documents[idx_doc].vocabulary.update({term: 1})
 
+    # Function to index a document in the inverted_index
     def index_document(self, document, idx_doc):
         words = self.parser.parse_doc(document)
         if not words:
@@ -33,6 +39,7 @@ class VectorSpace:
             self.index_term(term, idx_term, idx_doc)
         return True
 
+    # Function to index an entire collection in the inverted_index
     def index_collection(self, docs_collection=[]):
         if docs_collection:
             self.dictionnaries = docs_collection
@@ -51,6 +58,9 @@ class VectorSpace:
         self.__make_vectors_weight()
         return True
 
+    # Method to make the vectors of weights for the every documents.
+    # A vector in a document is actually a dictionary which map a term and a weight
+    # This is called after inverted index completion
     def __make_vectors_weight(self):
         for idx_doc, doc in enumerate(self.documents):
             # Construct the vector space for this document, associate a term with a weight
@@ -61,6 +71,7 @@ class VectorSpace:
                                                               key=self.documents[idx_doc].vector.get, reverse=True)]
             self.documents[idx_doc].vector = dict(self.documents[idx_doc].vector)
 
+    # Method to fill the vector of weight, call the transform method to get the weight of a term in a document
     def __make_doc_vector(self, idx_doc):
         for term in self.documents[idx_doc].vocabulary.keys():
             self.documents[idx_doc].vector[term] = self.transform.get_weight(term, self.documents[idx_doc],
@@ -101,6 +112,7 @@ class VectorSpace:
         self.__display_posting(word)
         print('\n', end='')
 
+    # Function to display the report -
     def display_report(self, query, scores):
         print("query :" + query+"\n")
         max_nbr_term = 5
@@ -121,7 +133,9 @@ class VectorSpace:
                 break
         print("=========END of query:"+query+"=========")
 
+    # Function to get similarity scores between a query and a list of documents
     def sort(self, query):
+        # A query is also a document so we can parse it the same way as other documents.
         words = self.parser.parse_doc(query)
         if not words:
             print("Incorrect query :"+query+" please refer to the ReadMe for the expected format")
