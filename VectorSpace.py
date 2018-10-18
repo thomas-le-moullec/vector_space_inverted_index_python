@@ -87,8 +87,8 @@ class VectorSpace:
                 query_vector[word] = 1
         return query_vector
 
-    def search(self, query_doc, doc, idx):
-        score = self.similarity.get_similarity(doc, query_doc, idx)
+    def search(self, query_doc, doc):
+        score = self.similarity.get_similarity(doc, query_doc)
         return score
 
     def __display_posting(self, word):
@@ -146,7 +146,7 @@ class VectorSpace:
             # Create a weights vector for the query based on the similarity with the document
             # Not taking care of the duplicate and number of occurrences (vocabulary is empty)
             doc_query.vector = self.__make_query_vector(words, doc)
-            cos_value = self.search(doc_query, doc, idx)
+            cos_value = self.search(doc_query, doc)
             scores[idx] = cos_value  # Similarity score
         scores = [(k, scores[k]) for k in sorted(scores, key=scores.get, reverse=True)]
         return scores

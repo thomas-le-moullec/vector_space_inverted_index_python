@@ -16,7 +16,7 @@ class Cosine(Similarity):
                 inner_product += (doc_vector[query_term] * query_vector[query_term])
         return inner_product
 
-    def __cos(self, doc, query, idx):
+    def __cos(self, doc, query):
         inner_product = self.__get_inner_product(doc.vector, query.vector)
         norm_doc = doc.get_magnitude()
         norm_query = sqrt(len(query.vector))
@@ -25,5 +25,5 @@ class Cosine(Similarity):
             similarity = inner_product / (norm_doc * norm_query)
         return similarity
 
-    def get_similarity(self, doc_vector, query_vector, idx):
-        return self.__cos(doc_vector, query_vector, idx)
+    def get_similarity(self, doc_vector, query_vector):
+        return self.__cos(doc_vector, query_vector)

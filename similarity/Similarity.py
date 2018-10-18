@@ -4,5 +4,5 @@ class Similarity:
         pass
 
     @classmethod
-    def get_similarity(cls, doc_vector, query_vector, idx):
+    def get_similarity(cls, doc_vector, query_vector):
         pass
